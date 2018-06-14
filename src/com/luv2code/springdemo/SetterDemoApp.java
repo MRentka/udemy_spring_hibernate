@@ -10,14 +10,17 @@ public class SetterDemoApp {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 		
 		// retrieve bean from spring container
-		CricketCoach theCoach = context.getBean("myCricketCoach", CricketCoach.class);
+		CricketCoach cricketCoach = context.getBean("myCricketCoach", CricketCoach.class);
+		KarateCoach karateCoach = context.getBean("myKarateCoach", KarateCoach.class);
 		
 		// call methods on bean
 		// ... later
-		System.out.println(theCoach.getDailyWorkout());
-		System.out.println(theCoach.getDailyFortune());
-		System.out.println(theCoach.getEmailAddress());
-		System.out.println(theCoach.getTeam());
+		System.out.println(cricketCoach.getDailyWorkout());
+		System.out.println(cricketCoach.getDailyFortune());
+		System.out.println(cricketCoach.getEmailAddress());
+		System.out.println(cricketCoach.getTeam());
+		System.out.println(karateCoach.getDailyWorkout());
+		System.out.println(karateCoach.getDailyFortune());
 		// close context
 		context.close();
 		
