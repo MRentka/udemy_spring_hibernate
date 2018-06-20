@@ -1,4 +1,4 @@
-package com.luv2code.springdemo;
+package springdemo.demoone;
 
 public class TrackCoach implements Coach {
 
@@ -20,5 +20,12 @@ public class TrackCoach implements Coach {
 	public String getDailyFortune() {
 		return fortuneService.getFortune();
 	}
+	
+	public void initBean() {
+		System.out.println("Init TrackCoach Bean");
+	}
 
+	public void cleanUpBean() {
+		System.out.println("Destroy trackCoach Bean");
+	}
 }

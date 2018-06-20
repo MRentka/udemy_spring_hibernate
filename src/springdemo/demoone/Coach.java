@@ -1,4 +1,4 @@
-package com.luv2code.springdemo;
+package springdemo.demoone;
 
 public interface Coach {
 
