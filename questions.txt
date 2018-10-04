@@ -1,0 +1,4 @@
+1. What exactly is a Spring Container?
+Is known as ApplicationContext
+Has different implementations
+2. 
