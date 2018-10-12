@@ -8,7 +8,8 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<context:component-scan base-package="springdemo.annotations" />
-
+	<context:property-placeholder location="classpath:fortunes.properties" />
+	
 </beans>
 
 

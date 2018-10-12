@@ -1,5 +1,8 @@
 package springdemo.annotations;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -8,12 +11,21 @@ import org.springframework.stereotype.Component;
 public class TennisCoach implements Coach {
 
 	@Autowired
-	@Qualifier("happyFortuneService")
+	@Qualifier("myRandomFortuneService")
 	private FortuneService fortuneService;
 	
-	// define a default constructor
 	public TennisCoach() {
 		System.out.println(">> TennisCoach: inside default constructor");
+	}
+	
+	@PostConstruct
+	public void init() {
+		System.out.println(">> tennisCoach init()");
+	}
+	
+	@PreDestroy
+	public void terminate() {
+		System.out.println(">> tennisCoach terminate()");
 	}
 	
 	@Override

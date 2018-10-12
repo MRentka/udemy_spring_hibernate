@@ -1,0 +1,1 @@
+fortunes.values=Good Fortune,Bad Fortune,Average luck
