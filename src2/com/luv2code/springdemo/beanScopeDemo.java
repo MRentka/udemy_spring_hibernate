@@ -9,7 +9,7 @@ public class beanScopeDemo {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beanScopeApplicationContext.xml");
 		Coach theCoach = context.getBean("myCoach", Coach.class);
 		Coach alphaCoach = context.getBean("myCoach", Coach.class);
-		System.out.println(alphaCoach == theCoach);
+		System.out.println("Same bean?: " + (alphaCoach == theCoach));
 		System.out.println(theCoach.toString());
 		System.out.println(alphaCoach.toString());
 	}
