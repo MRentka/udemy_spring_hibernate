@@ -13,16 +13,22 @@ import org.springframework.stereotype.Component;
 @Component
 public class MyRandomFortuneService implements FortuneService {
 
+	private String[] fortunes2 = {
+			"Good Fortune",
+			"Bad Fortune",
+			"Average luck"
+	};
 	private String[] fortunes;
 	private Random ran = new Random();
 	
 	@Override
 	public String getFortune() {
-		return fortunes[ran.nextInt(fortunes.length)];
+		return fortunes2[ran.nextInt(fortunes.length)];
 	}
 
 	@PostConstruct
 	public void init() throws FileNotFoundException, IOException {
+		/* READING FROM FILESYSTEM DOESNT WORK
 		try {
 			BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\raml1\\git\\udemy_spring_hibernate\\src\\fortunes.properties"));
 			while(reader.readLine() != null) {
@@ -35,5 +41,7 @@ public class MyRandomFortuneService implements FortuneService {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} 
+		*/
+		System.out.println("init-method");
 	}
 }

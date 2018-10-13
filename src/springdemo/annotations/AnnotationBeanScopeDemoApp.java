@@ -15,6 +15,8 @@ public class AnnotationBeanScopeDemoApp {
 		System.out.println("Memoryloc second:" + alphaCoach);
 		System.out.println("Same Object?: " + (theCoach == alphaCoach));
 		
+		context.close();
+		
 	}
 
 }

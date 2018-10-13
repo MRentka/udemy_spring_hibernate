@@ -2,6 +2,8 @@ package springdemo.annotations;
 
 import java.util.Random;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.stereotype.Component;
 
 @Component
@@ -20,6 +22,10 @@ public class RandomFortuneService implements FortuneService {
 		return data[ran.nextInt(data.length)];
 	}
 	
+	@PostConstruct
+	public void init() {
+		System.out.println(">> randomFortuneService init()");
+	}
 }
 
 

@@ -1,23 +1,20 @@
 package springdemo.annotations;
 
-import java.io.File;
-
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
 
 	public static void main(String[] args) {
 
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("resources/applicationContext.xml");
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SportConfig.class);
 		
-		Coach theCoach = context.getBean(Coach.class);
-		Coach alphaCoach = context.getBean(Coach.class);
+		SwimCoach coach = context.getBean("swimCoach", SwimCoach.class); 
+		Coach coach2 = context.getBean("swimCoach", SwimCoach.class);
 		
-		File file = new File("C:\\Users\\raml1\\git\\udemy_spring_hibernate\\src\\fortunes.properties");
-		for(String fileNames : file.list()) System.out.println(fileNames);
-		System.out.println("Memoryloc first:" + theCoach);
-		System.out.println("Memoryloc second:" + alphaCoach);
-		System.out.println("Same Object?: " + (theCoach == alphaCoach));
+		System.out.println(coach.getDailyWorkout());
+		System.out.println(coach.getDailyFortune());
+		System.out.println(coach.getEmail());
+		System.out.println(coach.getTeam());
 		
 		context.close();	
 	}
